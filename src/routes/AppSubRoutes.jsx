@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import loadable from '@loadable/component';
-import { Switch, Route, Redirect } from 'dva/router';
+import { Switch, Route } from 'dva/router';
 import PageLoading from '@/pages/Prompt/PageLoading';
 import MyBoundaryError from '@/pages/Prompt/MyBoundaryError';
 
