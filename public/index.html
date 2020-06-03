@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#FCC500">
+  <meta name="robot" content="none">
+  <meta name="keywords" content="关于移动端H5的网页">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta name="app-mobile-web-app-capable" content="yes" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <title>Check orders online</title>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+<script src="./polyfill/rem.js"></script>
+<script src="./polyfill/fastclick.js"></script>
+<script>
+  if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function () {
+      FastClick.attach(document.body);
+    }, false);
+  }
+  if (!window.Promise) {
+    document.writeln('<script src="./polyfill/es6-promise.min.js"' + '>' + '<' + '/' + 'script>');
+  }
+</script>
+
+</html>

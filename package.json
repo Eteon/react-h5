@@ -1,0 +1,69 @@
+{
+  "name": "h5",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "react-app-rewired start",
+    "dev": "cross-env REACT_APP_ENV=dev npm run start",
+    "sit": "cross-env REACT_APP_ENV=sit GENERATE_SOURCEMAP=false react-app-rewired build",
+    "uat": "cross-env REACT_APP_ENV=uat GENERATE_SOURCEMAP=false react-app-rewired build",
+    "build": "cross-env GENERATE_SOURCEMAP=false react-app-rewired build",
+    "build:sizzy": "cross-env REACT_APP_ENV=sizzy npm run build && http-server -p 9000 ./build && open sizzy",
+    "test": "react-app-rewired test --env=jsdom",
+    "cypress": "cypress open"
+  },
+  "homepage": ".",
+  "dependencies": {
+    "@loadable/component": "^5.12.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "antd-mobile": "^2.3.1",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "dva": "^2.6.0-beta.20",
+    "dva-loading": "^3.0.20",
+    "mapbox-gl": "^1.10.1",
+    "mockjs": "^1.1.0",
+    "postcss-aspect-ratio-mini": "^1.1.0",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-viewport-units": "^0.1.6",
+    "postcss-write-svg": "^3.0.1",
+    "rc-form": "^2.4.11",
+    "react": "^16.13.1",
+    "react-app-rewire-postcss": "^3.0.2",
+    "react-document-title": "^2.0.3",
+    "react-dom": "^16.13.1",
+    "react-intl-universal": "^2.2.5",
+    "react-scripts": "3.4.1",
+    "redux-undo": "^1.0.1",
+    "umi-request": "^1.2.19"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.10.1",
+    "babel-plugin-import": "^1.13.0",
+    "compression-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^3.5.3",
+    "customize-cra": "^0.9.1",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
+    "postcss-pxtorem": "^5.1.1",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "react-app-rewired": "^2.1.5",
+    "redux-logger": "^3.0.6",
+    "style-loader": "^1.2.1",
+    "webpack-bundle-analyzer": "^3.7.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
