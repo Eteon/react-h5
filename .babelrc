@@ -1,9 +1,9 @@
 {
     "presets": [
-        "@babel/preset-react"
-    ],
+        "@babel/preset-react"],
     "plugins": [
         "@babel/plugin-syntax-dynamic-import",
-        "@babel/plugin-proposal-optional-chaining"
+        "@babel/plugin-proposal-optional-chaining", //ES10提案,可选链 user&&user.name =>> user?.name
+        "@babel/plugin-transform-react-jsx-source"
     ]
 }

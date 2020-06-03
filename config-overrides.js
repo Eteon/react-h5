@@ -3,11 +3,11 @@ const {
     fixBabelImports,
     useBabelRc,
     addLessLoader,
-    addWebpackPlugin,
-    removeModuleScopePlugin,
-    overrideDevServer,
     addWebpackAlias,
+    addWebpackPlugin,
+    overrideDevServer,
     addDecoratorsLegacy,
+    removeModuleScopePlugin,
 } = require('customize-cra');
 
 const path = require('path');
@@ -80,7 +80,6 @@ const devServerConfig = () => config => {
 
 module.exports = {
     webpack: override(
-        removeModuleScopePlugin(),
         addLessLoader({
             javascriptEnabled: true,
             modifyVars: theme,
@@ -95,7 +94,6 @@ module.exports = {
             '@': path.resolve(__dirname, 'src'),
             '@config': path.resolve(__dirname, 'config'),
             '@mock': path.resolve(__dirname, 'mock'),
-            '-': '..',
         }),
         addCompression(),
         addAnalyzer(),
@@ -105,6 +103,7 @@ module.exports = {
             new ProgressBarPlugin(),
         ),
         addMobileCustomize(),
+        removeModuleScopePlugin()
     ),
     devServer: overrideDevServer(
         devServerConfig()

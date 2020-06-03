@@ -10,10 +10,10 @@ import * as models from '@/models';
 import locale, { currentLocale } from '@/locales';
 import '@/global/app.less';
 
-const { createBrowserHistory } = require('history');
+const { createHashHistory } = require('history');
 
 const app = dva({
-    history: createBrowserHistory(),
+    history: createHashHistory(), // 必须使用HASH路由, 否则FastClick报错
     onAction: createLogger(),
     onReducer: reducer => {
         return (state, action) => {
@@ -31,6 +31,7 @@ Object.keys(models).forEach(item => {
 });
 
 app.router(require('./router').default);
+
 intl.init({
     currentLocale,
     locales: { [currentLocale]: locale }

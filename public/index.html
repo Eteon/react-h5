@@ -16,20 +16,19 @@
 </head>
 
 <body>
+  <script src="./polyfill/rem.js"></script>
+  <script type='application/javascript' src="./polyfill/fastclick.js"></script>
+  <script>
+    if ('addEventListener' in document) {
+      document.addEventListener('DOMContentLoaded', function () {
+        FastClick.attach(document.body);
+      }, false);
+    }
+    if (!window.Promise) {
+      document.writeln('<script src="./polyfill/es6-promise.min.js"' + '>' + '<' + '/' + 'script>');
+    }
+  </script>
   <div id="root"></div>
 </body>
-
-<script src="./polyfill/rem.js"></script>
-<script src="./polyfill/fastclick.js"></script>
-<script>
-  if ('addEventListener' in document) {
-    document.addEventListener('DOMContentLoaded', function () {
-      FastClick.attach(document.body);
-    }, false);
-  }
-  if (!window.Promise) {
-    document.writeln('<script src="./polyfill/es6-promise.min.js"' + '>' + '<' + '/' + 'script>');
-  }
-</script>
 
 </html>
